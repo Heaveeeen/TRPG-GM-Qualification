@@ -10,12 +10,12 @@ const avatar = document.getElementById("avatar");
 function update(type, lines, avatar) {
     let bg = type == 1 ? bg1 : type == 2 ? bg2 : bg0;
     ctx.drawImage(bg, 0, 0);
-    ctx.font = '44pt "SourceHanSerif", serif';
+    ctx.font = '18pt "SourceHanSerif", serif';
     ctx.fillStyle = "#ffffff";
     for (let i = 0; i < lines.length; i++) {
-        ctx.fillText(lines[i], 412, 1183 + 88 * i);
+        ctx.fillText(lines[i], 165, 473 + 35 * i);
     }
-    avatar && ctx.drawImage(avatar, 1517, 1090, 500, 500);
+    avatar && ctx.drawImage(avatar, 607, 436, 200, 200);
 }
 
 
