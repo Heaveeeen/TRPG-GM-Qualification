@@ -14,14 +14,22 @@
                 <option value="1">跑团玩家（PL）</option>
                 <option value="2">粉红团（FH）</option>
             </select><br />
-                昵称：<input id="TheName" type="text" size="15" class="config" /><br />
-                考证等级：<input id="TheLevel" type="text" size="15" value="守秘人" class="config" /><br />
-                注册编号：<input id="TheNumHead" type="text" size="1" value="GM" class="config" /> -
-                <input id="TheNum" type="text" size="10" value="000000000000" class="config" />
+                昵称：<input id="TheName" type="text" class="config" /><br />
+                考证等级：<input id="TheLevel" type="text" value="守秘人" class="config" /><br />
+                注册编号：<input id="TheNumHead" type="text" value="GM" class="config" /> -
+                <input id="TheNum" type="text" value="000000000000" class="config" />
                 <input id="TheRandom" type="button" value="随机编号" onclick="randomNum()" /><br />
-                考核认证：<input id="TheCert" type="text" size="15" value="人民群众" class="config" /><br />
-                考核日期：<input id="TheDate" type="text" size="15" value="2025-4-14" class="config" /><br />
+                考核认证：<input id="TheCert" type="text" value="人民群众" class="config" /><br />
+                考核日期：<input id="TheDate" type="text" value="2025-4-14" class="config" /><br />
                 头像：<input id="TheUpload" type="file" accept="image/*" />←可拖放图片到此处<br />
+            </p><p>
+                字体：<select id="TheFont" class="config">
+                    <option value='500 18pt "思源宋体 CN", "Source Han Serif CN VF", "SourceHanSerif", serif'>思源宋体（字体较大，可能要加载很长时间才能正常显示）</option>
+                    <option value='500 18pt "宋体", "SimSun", "华文中宋", "STSong", serif'>serif（衬线字体，如宋体。安卓和Linux等系统没有默认衬线字体）</option>
+                    <option value='400 18pt sans-serif'>sans-serif（无衬线字体，如黑体）</option>
+                </select><br />
+                “昵称”两字之间的空格数：<input id="TheSpace" type="number" step="1" value="8" class="config" /><br />
+                调整这里可以让所有冒号对齐成一列↑<!--我知道这个地方应该有更好的写法，但我懒得研究，补药拷打我-->
             </p>
             <p><input id="TheDownload" type="button" value="点此下载图片" onclick="download()"></p>
             <p>提示：右键图片，可以复制或下载</p>

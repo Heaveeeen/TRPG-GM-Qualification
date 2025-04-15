@@ -9,10 +9,10 @@ const bg1 = document.getElementById("bg1");
 const bg2 = document.getElementById("bg2");
 const avatar = document.getElementById("avatar");
 
-function update(type, lines, avatar) {
+function update(type, lines, font, avatar) {
     let bg = type == 1 ? bg1 : type == 2 ? bg2 : bg0;
     ctx.drawImage(bg, 0, 0);
-    ctx.font = '18pt "SourceHanSerif", serif';
+    ctx.font = font ?? "18pt sans-serif";
     ctx.fillStyle = "#ffffff";
     for (let i = 0; i < lines.length; i++) {
         ctx.fillText(lines[i], 165, 473 + 35 * i);
@@ -27,7 +27,6 @@ function download() {
     document.body.appendChild(theLink);
     theLink.click();
     document.body.removeChild(theLink);
-    console.log(dataURL);
 }
 
 
@@ -71,12 +70,12 @@ document.getElementById("TheUpload").addEventListener('change', (e) => {
 
 function updateCanvasByConfig() {
     update(cfg("TheType"), [
-        `昵        称：${cfg("TheName")}`,
+        `昵${" ".repeat(cfg("TheSpace"))}称：${cfg("TheName")}`,
         `考证等级：${cfg("TheLevel")}`,
         `注册编号：${cfg("TheNumHead")}-${cfg("TheNum")}`,
         `考核认证：${cfg("TheCert")}`,
         `考核日期：${cfg("TheDate")}`
-    ], avatar);
+    ], cfg("TheFont"), avatar);
 }
 
 window.addEventListener("load", updateCanvasByConfig);

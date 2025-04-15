@@ -25,6 +25,26 @@ body {
     display: none;
 }
 
+#TheName {
+    width: 116px;
+}
+
+#TheLevel, #TheCert, #TheDate {
+    width: 80px;
+}
+
+#TheNumHead {
+    width: 30px;
+}
+
+#TheNum {
+    width: 100px;
+}
+
+#TheSpace {
+    width: 30px;
+}
+
 @font-face {
     font-family: "SourceHanSerif";
     src: url(sourcehanserifsc.ttf);
