@@ -9,7 +9,6 @@
     <body>
         <canvas id="TheCanvas" width="1000" height="1000">错误：浏览器不支持 canvas</canvas>
         <div id="TheConfig">
-            <p>提示：右键或长按图片，以保存证件照</p>
             <p>证件类型：<select id="TheType" class="config">
                 <option value="0">跑团主持人（GM）</option>
                 <option value="1">跑团玩家（PL）</option>
@@ -24,6 +23,8 @@
                 考核日期：<input id="TheDate" type="text" size="15" value="2025-4-14" class="config" /><br />
                 头像：<input id="TheUpload" type="file" accept="image/*" />←可拖放图片到此处<br />
             </p>
+            <p><input id="TheDownload" type="button" value="点此下载图片" onclick="download()"></p>
+            <p>提示：右键图片，可以复制或下载</p>
             
         </div>
         <img id="bg0" src="bg-0.png" class="imageSource" />

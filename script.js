@@ -1,6 +1,8 @@
 
-const canvas = document.getElementById("TheCanvas");
-const ctx = canvas.getContext("2d");
+const theCanvas = document.getElementById("TheCanvas");
+const ctx = theCanvas.getContext("2d");
+
+const theLink = document.createElement("a");
 
 const bg0 = document.getElementById("bg0");
 const bg1 = document.getElementById("bg1");
@@ -16,6 +18,16 @@ function update(type, lines, avatar) {
         ctx.fillText(lines[i], 165, 473 + 35 * i);
     }
     avatar && ctx.drawImage(avatar, 607, 436, 200, 200);
+}
+
+function download() {
+    const dataURL = theCanvas.toDataURL("image/png");
+    theLink.download = `营地跑团${cfg("TheLevel")}证-${cfg("TheName")}.png`;
+    theLink.href = dataURL;
+    document.body.appendChild(theLink);
+    theLink.click();
+    document.body.removeChild(theLink);
+    console.log(dataURL);
 }
 
 
